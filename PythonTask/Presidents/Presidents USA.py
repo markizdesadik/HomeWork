@@ -1,8 +1,10 @@
 a = open('text.txt')
+b = 0
 print('******************************')
 for i in a.readlines():
-    age1 = i[len(i) - 5:len(i)]
-    age2 = i[len(i) - 12:len(i) - 8]
-    delta = int(age1)- int(age2)
-    print('Президент {} у власти был {} лет'.format(i, delta))
+    b += 1
+    year1 = i[len(i) - 5:len(i)]
+    year2 = i[len(i) - 12:len(i) - 8]
+    delta = int(year1)- int(year2)
+    print('{}-й Президент {} года рождения. у власти был {} лет'.format(b, i.split('-')[1].split('('), delta))
     print('******************************')
