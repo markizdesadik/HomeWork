@@ -60,16 +60,7 @@ void List::Show_in_Group(int num){
 }
 
 void List::Sort_List(){
-  //  for (Student c : spis){
-  //      if (std::lexicographical_compare(c.Name.begin(), c.Name.end(),
-  //                                       c.Next->Name.begin(), c.Next->Name.end())){
-  //           Student tmp = c;
-   //          c = c.Next;
-  //           c->Next = tmp;
-  //       }
-//
-  //  }
-    std::sort(spis.begin(), spis.end());
+    std::sort(spis.begin(), spis.end(), [] (Student const& a, Student const& b) { return a.Name < b.Name; });
 }
 
 
@@ -84,9 +75,14 @@ int main ()
     lst.Add("Vika", 3);
     lst.Add("Slava", 2);
     lst.Add("Kostya", 2);
+    lst.Add("Alla", 3);
+    lst.Add("Baris", 3);
+    lst.Add("Inga", 3);
 
     lst.Show_All();
     lst.Sort_List();
+    std::cout << std::endl;
+    std::cout << std::endl;
     lst.Show_All();
     lst.Show_in_Group(3);
 
